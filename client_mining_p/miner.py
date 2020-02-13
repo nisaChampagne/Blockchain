@@ -35,8 +35,6 @@ def proof_of_work(block):
     print("Mining complete!")
     return proof
 
-
-
 def valid_proof(block_string, proof):
     """
     Validates the Proof:  Does hash(block_string, proof) contain 6

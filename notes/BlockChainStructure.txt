@@ -172,3 +172,32 @@ Why is proof of work hard?
     * doesnt have a prev hash as there is no prev block
 
     * the prev hash being  whatever you set it to will help identify it as the genesis
+
+
+Random notes
+
+Python interprets things differently than JSON, which is why we need jsonify.
+
+breakpoint() = check that out and write what you find :)
+* used to pause program to verify any info you need to verify
+
+
+r.json() converts the data back to a python dictionary cool!!
+
+you dont have to run pipenv shell if there are no third party
+libraries being used in the file.
+
+
+flask returns markup hense why we need to convert it into json
+
+
+Built in exceptions in python:
+ I used ValueError for when there is a problem with the content of the object you tried to assign the value to
+  it would ideally not accept that single transaction instead of crashing the whole project
+
+
+having a breakpoint() on the server and not the client will pause the server and client at the requested
+breakpoint
+
+breakpoint in Python is sync so will not proceed after breakpoint()
+

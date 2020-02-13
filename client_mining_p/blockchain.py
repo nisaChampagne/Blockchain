@@ -26,7 +26,7 @@ class Blockchain(object):
         self.current_transactions = []
 
         # Create the genesis block
-        self.new_block(previous_hash="I'm a teapot.", proof=100)
+        self.new_block(previous_hash="I'm the genesis block o_o", proof=100)
 
     def new_block(self, proof, previous_hash=None):
         """
@@ -45,7 +45,6 @@ class Blockchain(object):
         """
         # a dictionary
         block = {
-            # TODO
             'index': len(self.chain) + 1, # index of the first block is 1
             # for index here in a block, we get to count normally
             'time_stamp':time(),
@@ -157,7 +156,7 @@ class Blockchain(object):
 
         return guess_hash[:LOTSOFZEROS] == '0' * LOTSOFZEROS
         '''
-        return if guess_hash  first 3 characters == '000'
+        return if guess_hash  first 6 characters == '000000'
         '''
         # return True or False
 
@@ -207,17 +206,17 @@ def mine():
 
             # performing what was proof part of proof_of_work on the post request
             block_string = json.dumps(blockchain.last_block, sort_keys=True)
-            miner_proof = data['proof']
-            print(CYAN + f"{miner_proof}, miner proof is this")
-            #minor proof is the  like striking gold but a proof
+            proof = data['proof']
+            print(CYAN + f"{proof}, proof is this")
+            # proof is the  like striking gold but a proof
             # will reflect in a print() i have set up on miner.py
 
             # as long as the proof checks out and has the 6 preceeding 0s
-            if blockchain.valid_proof(block_string, miner_proof):
+            if blockchain.valid_proof(block_string, proof):
                 previous_hash = blockchain.hash(blockchain.last_block)
 
                 # a new_block will be created that will hold on to the prev hash of the block before it.
-                new_block = blockchain.new_block(miner_proof, previous_hash)
+                new_block = blockchain.new_block(proof, previous_hash)
                 
                 # success
                 response = {

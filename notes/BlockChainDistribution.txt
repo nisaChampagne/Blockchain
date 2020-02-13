@@ -1,0 +1,17 @@
+for the blockchain class we need to add a method to add a transaction
+
+new_transaction needs:
+1) a sender
+2) a recipient
+3) an amount
+
+the method would need to accept three args ( sender, recipient, amount)
+
+it would need to append them to the self.current_transactions
+
+then return the index that the transaction will be save in ( the block that is currently being mined ) 
+
+for todays project (2/13) we will implement new_transaction in the /mine POST request
+
+Wallets:
+
